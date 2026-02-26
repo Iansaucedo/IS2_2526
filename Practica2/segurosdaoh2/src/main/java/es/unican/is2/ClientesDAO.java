@@ -1,3 +1,4 @@
+package es.unican.is2;
 
 
 
@@ -8,6 +9,7 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
+import H2ServerConnectionManager;
 import es.Cliente;
 import es.unican.is2.DataAccessException;
 import es.unican.is2.IClientesDAO;
