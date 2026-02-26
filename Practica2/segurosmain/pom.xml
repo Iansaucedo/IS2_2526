@@ -55,7 +55,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>es.unican.is2.VistaAgente</mainClass>
+                            <mainClass>es.unican.is2.Runner</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -67,7 +67,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>es.unican.is2.VistaAgente</mainClass>
+                            <mainClass>es.unican.is2.Runner</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
