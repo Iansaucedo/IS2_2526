@@ -1,6 +1,9 @@
+package es.unican.is2;
 
 
 import java.time.LocalDate;
+
+import es.unican.is2.Cobertura;
 
 /**
  * Clase que representa un seguro de coche.

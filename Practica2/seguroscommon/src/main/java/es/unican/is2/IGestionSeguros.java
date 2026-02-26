@@ -1,6 +1,10 @@
+package es.unican.is2;
 
 
 import java.util.zip.DataFormatException;
+
+import es.unican.is2.DataAccessException;
+import es.unican.is2.OperacionNoValida;
 
 
 

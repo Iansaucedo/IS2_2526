@@ -1,6 +1,9 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import es.Cliente;
+import es.unican.is2.DataAccessException;
+
 
 
 /**

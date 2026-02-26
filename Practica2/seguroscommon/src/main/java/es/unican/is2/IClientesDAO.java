@@ -1,6 +1,10 @@
+package es.unican.is2;
 
 
 import java.util.List;
+
+import es.unican.is2.DataAccessException;
+import es.unican.is2.Cliente;
 
 
 

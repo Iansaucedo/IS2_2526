@@ -1,3 +1,6 @@
+package es.unican.is2;
+import es.unican.is2.Cliente;
+import es.unican.is2.DataAccessException;
 
 
 /**
