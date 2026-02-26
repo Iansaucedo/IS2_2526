@@ -9,11 +9,11 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
-import H2ServerConnectionManager;
-import es.Cliente;
+import  es.unican.is2.H2ServerConnectionManager;
+import  es.unican.is2.Cliente;
 import es.unican.is2.DataAccessException;
 import es.unican.is2.IClientesDAO;
-import seguroscommon.target.Seguro;
+import es.unican.is2.Seguro;
 
 
 public class ClientesDAO implements IClientesDAO {

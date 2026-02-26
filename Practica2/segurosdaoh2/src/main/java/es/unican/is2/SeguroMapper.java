@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 import es.unican.is2.Cobertura;
 import es.unican.is2.DataAccessException;
-import seguroscommon.target.Seguro;
+import  es.unican.is2.Seguro;
 
 /**
  * Clase de utilidad que mapea filas de la base de datos a 
