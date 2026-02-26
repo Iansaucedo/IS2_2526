@@ -1,4 +1,4 @@
-
+package es.unican.is2;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import es.unican.is2.DataAccessException;
 import es.unican.is2.ISegurosDAO;
-import seguroscommon.target.Seguro;
+import  es.unican.is2.Seguro;
 
 
 public class SegurosDAO implements ISegurosDAO {
