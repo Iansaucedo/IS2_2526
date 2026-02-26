@@ -1,3 +1,6 @@
+import VistaAgente;
+package es.unican.is2;
+import es.unican.is2.ClientesDAO;
 import es.unican.is2.IClientesDAO;
 import es.unican.is2.ISegurosDAO;
 
