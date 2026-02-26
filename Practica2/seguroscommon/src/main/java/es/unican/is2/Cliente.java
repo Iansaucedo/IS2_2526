@@ -1,5 +1,8 @@
+package es.unican.is2;
 import java.util.LinkedList;
 import java.util.List;
+
+import es.unican.is2.Seguro;
 
 /**
  * Clase que representa un cliente de la empresa de seguros

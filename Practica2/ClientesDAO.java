@@ -8,6 +8,11 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
+import es.Cliente;
+import es.unican.is2.DataAccessException;
+import es.unican.is2.IClientesDAO;
+import seguroscommon.target.Seguro;
+
 
 public class ClientesDAO implements IClientesDAO {
 

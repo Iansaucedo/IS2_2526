@@ -7,6 +7,10 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
+import es.unican.is2.DataAccessException;
+import es.unican.is2.ISegurosDAO;
+import seguroscommon.target.Seguro;
+
 
 public class SegurosDAO implements ISegurosDAO {
 
