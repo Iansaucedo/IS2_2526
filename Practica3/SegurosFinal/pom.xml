@@ -21,10 +21,10 @@
  Nombres de los directorios que contienen los módulos. Asegurar que se correspondan con vuestros directorios 
 -->
 <modules>
-<module>seguroscommon</module>
-<module>segurosdaoh2</module>
-<module>segurobussines</module>
-<module>segurosgui</module>
-<module>segurosmain</module>
+<module>SegurosCommon</module>
+<module>SegurosDAO</module>
+<module>SegurosBusiness</module>
+<module>SegurosGUI</module>
+<module>SegurosMain</module>
 </modules>
 </project>
