@@ -276,4 +276,33 @@ public class VistaAgenteIT {
 		vistaAgente.rellenaDatosCliente("33333333A");
 		assertThat(vistaAgente.txtNombreCliente.getText()).isEqualTo("Luis");
 	}
+	
+	@Test
+	public void testRellenaDatosClienteDataAccessException() throws Exception {
+
+	    // Arrange: crear mocks
+	    IInfoSeguros infoMock = org.mockito.Mockito.mock(IInfoSeguros.class);
+	    IGestionClientes clientesMock = org.mockito.Mockito.mock(IGestionClientes.class);
+	    IGestionSeguros segurosMock = org.mockito.Mockito.mock(IGestionSeguros.class);
+
+	    // Simular excepción
+	    org.mockito.Mockito.when(infoMock.cliente("11111111A"))
+	        .thenThrow(new DataAccessException());
+
+	    VistaAgente vista = new VistaAgente(clientesMock, segurosMock, infoMock);
+	    vista.setVisible(true);
+
+	    // Act
+	    vista.rellenaDatosCliente("11111111A");
+
+	    // Assert
+	    assertThat(vista.txtNombreCliente.getText())
+	        .isEqualTo("Error en BBDD");
+
+	    assertThat(vista.txtTotalCliente.getText())
+	        .isEqualTo("");
+
+	    assertThat(vista.listModel.getSize())
+	        .isEqualTo(0);
+	}
 }
