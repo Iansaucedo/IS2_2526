@@ -406,4 +406,86 @@ public class ClienteTest {
 		assertThat(cliente.getSeguros()).hasSize(3);
 		assertThat(total).isGreaterThanOrEqualTo(0);
 	}
+
+	// New tests to increase coverage: constructors, equals and hashCode
+
+	@Test
+	public void constructorWithParams_setsFieldsCorrectly() {
+		Cliente c = new Cliente("11111111A", "Juan");
+		assertThat(c.getDni()).isEqualTo("11111111A");
+		assertThat(c.getNombre()).isEqualTo("Juan");
+	}
+
+	@Test
+	public void constructorWithAllParams_setsFieldsCorrectly() {
+		Cliente c = new Cliente("22222222B", "Ana", true);
+		assertThat(c.getDni()).isEqualTo("22222222B");
+		assertThat(c.getNombre()).isEqualTo("Ana");
+		assertThat(c.getMinusvalia()).isTrue();
+	}
+
+	@Test
+	public void equals_sameDni_areEqual_and_hashCodeEqual() {
+		Cliente a = new Cliente("999Z", "One");
+		Cliente b = new Cliente("999Z", "Two");
+		assertThat(a).isEqualTo(b);
+		assertThat(a.hashCode()).isEqualTo(b.hashCode());
+	}
+
+	@Test
+	public void equals_differentDni_notEqual() {
+		Cliente a = new Cliente("111A", "One");
+		Cliente b = new Cliente("222B", "Two");
+		assertThat(a).isNotEqualTo(b);
+	}
+
+	@Test
+	public void equals_nullAndDifferentClass_behaviour() {
+		Cliente a = new Cliente("333C", "X");
+		assertThat(a.equals(null)).isFalse();
+		assertThat(a.equals("not a cliente")).isFalse();
+	}
+
+	@Test
+	public void equals_bothDniNull_areEqual() {
+		Cliente a = new Cliente();
+		Cliente b = new Cliente();
+		// both dni null -> Objects.equals(null, null) => true
+		assertThat(a).isEqualTo(b);
+	}
+
+	@Test
+	public void totalSeguros_returnsZero_whenSegurosIsNull() {
+        Cliente c = new Cliente("456B", "Luis");
+        c.setSeguros(null);
+        assertThat(c.totalSeguros()).isEqualTo(0.0);
+    }
+
+    @Test
+    public void totalSeguros_ignoresNullEntries() {
+        Cliente c = new Cliente("789C", "María");
+        Seguro s1 = new Seguro("AAA-111", 100, Cobertura.TERCEROS, LocalDate.now().minusDays(2));
+        List<Seguro> lista = new LinkedList<>();
+        lista.add(null);
+        lista.add(s1);
+        c.setSeguros(lista);
+        assertThat(c.totalSeguros()).isEqualTo(s1.precio());
+    }
+
+    @Test
+    public void totalSeguros_listWithOnlyNulls_returnsZero() {
+        Cliente c = new Cliente("555N", "Nulls");
+        List<Seguro> lista = new LinkedList<>();
+        lista.add(null);
+        lista.add(null);
+        c.setSeguros(lista);
+        assertThat(c.totalSeguros()).isEqualTo(0.0);
+    }
+
+    @Test
+    public void equals_sameInstance_returnsTrue() {
+        Cliente c = new Cliente("321X", "Self");
+        assertThat(c.equals(c)).isTrue();
+    }
+
 }
